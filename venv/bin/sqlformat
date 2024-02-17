@@ -1,4 +1,6 @@
-#!/home/tcm/Salman/TopJobs/cv_bank/venv/bin/python
+#!/bin/sh
+'''exec' "/home/salman/Salman/Salman/CV Bank/CV-Bank/venv/bin/python3" "$0" "$@"
+' '''
 # -*- coding: utf-8 -*-
 import re
 import sys

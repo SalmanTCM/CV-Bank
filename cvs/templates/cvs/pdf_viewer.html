@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PDF Viewer</title>
+    <link href="{% static 'css/pdf_viewer.css' %}" rel="stylesheet">
+</head>
+<body>
+    <div id="pdf-viewer"></div>
+
+    <script src="{% static 'js/pdf.js' %}"></script>
+    <script>
+        // Get the URL of the PDF file from the backend
+        var pdfUrl = "{{ pdf_url }}";  // Dynamically retrieve the PDF URL
+
+        // Use PDF.js to render the PDF file
+        var pdfjsLib = window['pdfjs-dist/build/pdf'];
+
+        pdfjsLib.getDocument(pdfUrl).promise.then(function(pdfDoc) {
+            var numPages = pdfDoc.numPages;
+
+            // Iterate over each page of the PDF
+            for (var i = 1; i <= numPages; i++) {
+                pdfDoc.getPage(i).then(function(page) {
+                    var canvas = document.createElement('canvas');
+                    var context = canvas.getContext('2d');
+                    var viewport = page.getViewport({ scale: 1.5 });
+                    canvas.height = viewport.height;
+                    canvas.width = viewport.width;
+
+                    var renderContext = {
+                        canvasContext: context,
+                        viewport: viewport
+                    };
+
+                    // Render the page onto the canvas
+                    page.render(renderContext);
+
+                    // Append the canvas to the PDF viewer div
+                    document.getElementById('pdf-viewer').appendChild(canvas);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

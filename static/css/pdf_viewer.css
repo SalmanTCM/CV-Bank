@@ -1,0 +1,18 @@
+/* pdf_viewer.css */
+
+/* Styling the PDF viewer container */
+#pdf-viewer {
+    width: 100%; /* Adjust the width as needed */
+    height: 600px; /* Adjust the height as needed */
+    border: 1px solid #ccc; /* Border for the viewer */
+    padding: 10px; /* Padding around the viewer */
+    box-sizing: border-box; /* Ensure padding is included in the width */
+}
+
+/* Styling for individual pages */
+canvas {
+    display: block; /* Ensure canvas elements are block-level */
+    margin: 0 auto; /* Center the canvas horizontally */
+    margin-bottom: 20px; /* Add space between pages */
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); /* Add shadow effect */
+}

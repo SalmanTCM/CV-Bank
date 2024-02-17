@@ -3,6 +3,8 @@ from django.db import models
 class CV(models.Model):
     full_name = models.CharField(max_length=100)
     email = models.EmailField()
+    designation = models.CharField(max_length=100)
+    experience = models.CharField(max_length=100)
     phone_number = models.CharField(max_length=20)
     resume = models.FileField(upload_to='resumes/')
     uploaded_at = models.DateTimeField(auto_now_add=True)
