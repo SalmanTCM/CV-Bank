@@ -7,7 +7,8 @@ from django.urls import reverse
 class CVAdmin(admin.ModelAdmin):
     list_display = ('full_name', 'email', 'phone_number', 'designation', 'experience', 'resume', 'resume_actions')
     list_filter = ('uploaded_at', 'experience')
-    search_fields = ('phone_number', 'designation', 'experience' )
+    search_fields = ('phone_number', 'designation', 'experience', 'email', 'full_name')
+    list_per_page = 10
 
     # def view_pdf(self, obj):
     #     if obj.resume:
