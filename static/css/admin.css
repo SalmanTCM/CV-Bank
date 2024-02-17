@@ -1,0 +1,36 @@
+/* static/css/admin.css */
+
+/* Style for the Preview PDF button */
+.preview-button {
+    background-color: #5dbea3; /* Green */
+    border: none;
+    color: #FFFFF7;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin-right: 5px; /* Add spacing between buttons */
+    border-radius: 5px;
+}
+
+.preview-button:hover {
+    background-color: #45a049; /* Darker Green */
+}
+
+/* Style for the Download PDF button */
+.download-button {
+    background-color: #dd7973; /* Blue */
+    border: none;
+    color: #FFFFF7;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+.download-button:hover {
+    background-color: #286090; /* Darker Blue */
+}
