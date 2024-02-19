@@ -104,6 +104,15 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+#Rest Framework Permission
+
+# REST_FRAMEWORK = {
+#     'DEFAULT_AUTHENTICATION_CLASSES': (
+#         'rest_framework.permissions.IsAuthenticatedOrReadOnly'
+#     )
+# }
+
+
 #Static
 # STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
