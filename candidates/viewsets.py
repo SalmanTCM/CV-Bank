@@ -1,10 +1,11 @@
 from django.contrib.auth.models import User
 from rest_framework import viewsets
-from .serializers import CandidateSerializer
-# from .permissions import IsUserOwnerOrGetAndPostOnly
+from .serializers import CandidateSerializer,CandidateProfileSerializer
+from .permissions import IsUserOwnerOrGetAndPostOnly
+from .models import Candidate
 
 class CandidateViewSet(viewsets.ModelViewSet):
-    # permission_classes = [IsUserOwnerOrGetAndPostOnly]
+    permission_classes = [IsUserOwnerOrGetAndPostOnly]
     queryset = User.objects.all()
     serializer_class = CandidateSerializer
 
@@ -12,3 +13,7 @@ class CandidateViewSet(viewsets.ModelViewSet):
     #     queryset = User.objects.all()
     #     serializer = CandidateSerializer(queryset, many=True)
 
+
+class CandidateProfileViewSet(viewsets.ModelViewSet):
+    queryset = Candidate.objects.all()
+    serializer_class = CandidateProfileSerializer
